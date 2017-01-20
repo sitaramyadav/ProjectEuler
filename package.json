@@ -3,13 +3,27 @@
   "version": "1.0.0",
   "description": "Here I am solving problem which is available at https://projecteuler.net/archives.",
   "main": "n",
+  "directories": {
+    "test": "src"
+  },
   "scripts": {
-    "test": "npm start "
+    "test": "mocha --recursive src/test"
   },
   "author": "sitaramyadav",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "^3.2.0"
-  }
+  },
+  "dependencies": {
+    "chai": "^3.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sitaramyadav/ProjectEuler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sitaramyadav/ProjectEuler/issues"
+  },
+  "homepage": "https://github.com/sitaramyadav/ProjectEuler#readme"
 }
