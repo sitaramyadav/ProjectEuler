@@ -7,7 +7,6 @@ mathematicalProblems.sumOfMultiplesBetween = function (firstNumber, secondNumber
             sum = sum+from;
         }
     }
-    console.log( sum + 'ha bhai yahi hai');
     return sum;
 };
 
