@@ -51,13 +51,11 @@ describe('Mathmatical Natural Numbers Problems', function () {
 
     });
 
-    describe('Pal', function () {
-        it('should return largest prime factor of the given number number', function () {
-            assert.equal(3, project_euler_lib.getLargestPrimeFactor(12));
-            assert.equal(7, project_euler_lib.getLargestPrimeFactor(21));
-            assert.equal(31, project_euler_lib.getLargestPrimeFactor(31));
-            assert.equal(7, project_euler_lib.getLargestPrimeFactor(49));
-            assert.equal(6857, project_euler_lib.getLargestPrimeFactor(600851475143));
+    describe('Palindrome', function () {
+        it('should return largest palindrome made from the product of two 2-digit numbers', function () {
+           var expected = 9009;
+            var actual =  project_euler_lib.palindromOf("two-digit");
+            assert.equal(expected, actual);
         });
 
     });
