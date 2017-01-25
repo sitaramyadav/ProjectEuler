@@ -41,15 +41,13 @@ describe('Mathmatical Natural Numbers Problems', function () {
     });
 
     describe('Prime', function () {
-
         it('should return largest prime factor of the given number number', function () {
             assert.equal(3, mathematical_problems.getLargestPrimeFactor(12));
-            assert.equal(11, mathematical_problems.getLargestPrimeFactor(21));
+            assert.equal(7, mathematical_problems.getLargestPrimeFactor(21));
             assert.equal(31, mathematical_problems.getLargestPrimeFactor(31));
             assert.equal(7, mathematical_problems.getLargestPrimeFactor(49));
             assert.equal(6857, mathematical_problems.getLargestPrimeFactor(600851475143));
         });
-
 
     });
 
