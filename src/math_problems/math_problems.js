@@ -23,4 +23,34 @@ mathematicalProblems.fibonacci = function (till) {
     return {lastTerm:first,evenSum:evenSum};
 };
 
+mathematicalProblems.isPrime = function(number) {
+    var start = 2;
+    while (start <= Math.sqrt(number)) {
+        if (number % start++ < 1) return false;
+    }
+    return number > 1;
+};
+
+mathematicalProblems.getFactors = function(number){
+    let factors = [];
+  for(var i =0;i <=number;i++){
+      if(number%i==0)
+          factors.push(i);
+  };
+  return factors;
+};
+
+mathematicalProblems.getPrimeFactores = function (number) {
+    var factores = mathematicalProblems.getFactors(number);
+    return factores.filter(function (each) {
+            if(mathematicalProblems.isPrime(each)) return each;
+    });
+};
+
+mathematicalProblems.getLargestPrimeFactor = function (number) {
+    var primeFactores = mathematicalProblems.getPrimeFactores(number);
+    return primeFactores[primeFactores.length-1];
+
+};
+
 module.exports = mathematicalProblems;
