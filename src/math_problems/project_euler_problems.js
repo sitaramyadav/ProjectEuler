@@ -1,7 +1,7 @@
-var mathematicalProblems = {};
+const mathematicalProblems = {};
 
 mathematicalProblems.sumOfMultiplesBetween = function (firstNumber, secondNumber, from, to) {
-    var sum = 0;
+    let sum = 0;
     for (from; from < to; from++) {
         if (from % firstNumber == 0 || from % secondNumber == 0) {
             sum = sum + from;
@@ -11,7 +11,7 @@ mathematicalProblems.sumOfMultiplesBetween = function (firstNumber, secondNumber
 };
 
 mathematicalProblems.fibonacci = function (till) {
-    var first = 1, second = 1, sum = 0, evenSum = 0;
+    let first = 1, second = 1, sum = 0, evenSum = 0;
     while (sum < till) {
         sum = first + second;
         first = second;
@@ -24,7 +24,7 @@ mathematicalProblems.fibonacci = function (till) {
 };
 
 mathematicalProblems.getLargestPrimeFactor = function (number) {
-    var largestFactor = 2;
+    let largestFactor = 2;
     while (largestFactor <= number) {
         if (number % largestFactor == 0) {
             number /= largestFactor;

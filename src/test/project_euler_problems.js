@@ -1,7 +1,7 @@
-var chai = require('chai');
-var assert = chai.assert;
+const chai = require('chai');
+const assert = chai.assert;
 
-var project_euler_lib = require('../math_problems/project_euler_problems.js');
+const project_euler_lib = require('../math_problems/project_euler_problems.js');
 
 describe('Mathmatical Natural Numbers Problems', function () {
 
@@ -28,7 +28,7 @@ describe('Mathmatical Natural Numbers Problems', function () {
     });
 
     describe('Fibonacci sequence', function () {
-        var fibonacci = project_euler_lib.fibonacci(4000000);
+        const fibonacci = project_euler_lib.fibonacci(4000000);
         it('should not exceed four million', function () {
             assert.ok(fibonacci.lastTerm < 4000000);
 
@@ -53,8 +53,8 @@ describe('Mathmatical Natural Numbers Problems', function () {
 
     describe('Palindrome', function () {
         it('should return largest palindrome made from the product of two 2-digit numbers', function () {
-           var expected = 9009;
-            var actual =  project_euler_lib.palindromOf("two-digit");
+           const expected = 9009;
+           const actual =  project_euler_lib.palindromOf("two-digit");
             assert.equal(expected, actual);
         });
 
