@@ -52,13 +52,26 @@ describe('Mathmatical Natural Numbers Problems', function () {
     });
 
     describe('Palindrome', function () {
+
+        it('should return product of two no', function () {
+            const actual = project_euler_lib.productOf(99, 99);
+            assert.equal(99 * 99, actual);
+        });
+
+        it('should return true if no is palindrom for numbers', function () {
+            const actual = project_euler_lib.isPolindrom(9009);
+            assert.equal(true, actual);
+        });
+
+        it('should return true if no is palindrom for numbers', function () {
+            const actual = project_euler_lib.isPolindrom('CAAC');
+            assert.equal(true, actual);
+        });
         it('should return largest palindrome made from the product of two 2-digit numbers', function () {
-           const expected = 9009;
-           const actual =  project_euler_lib.palindromOf("two-digit");
+            const expected = 9009;
+            const actual = project_euler_lib.palindromBetween(99, 90);
             assert.equal(expected, actual);
         });
 
     });
-
-
 });
