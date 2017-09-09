@@ -41,6 +41,7 @@ describe('Mathmatical Natural Numbers Problems', function () {
     });
 
     describe('Prime', function () {
+
         it('should return largest prime factor of the given number number', function () {
             assert.equal(3, project_euler_lib.getLargestPrimeFactor(12));
             assert.equal(7, project_euler_lib.getLargestPrimeFactor(21));
@@ -67,9 +68,16 @@ describe('Mathmatical Natural Numbers Problems', function () {
             const actual = project_euler_lib.isPolindrom('CAAC');
             assert.equal(true, actual);
         });
+
         it('should return largest palindrome made from the product of two 2-digit numbers', function () {
             const expected = 9009;
             const actual = project_euler_lib.palindromBetween(99, 90);
+            assert.equal(expected, actual);
+        });
+
+        it('should return largest palindrome made from the product of two 3-digit numbers', function () {
+            const expected = 906609;
+            const actual = project_euler_lib.palindromBetween(999, 900);
             assert.equal(expected, actual);
         });
 

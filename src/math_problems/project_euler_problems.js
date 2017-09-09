@@ -36,18 +36,22 @@ mathematicalProblems.getLargestPrimeFactor = function (number) {
 };
 
 mathematicalProblems.isPolindrom = function (texts) {
-    let is_polindrom = false;
+    let is_polindrom;
     let texts_ = texts.toString().split('');
     let counter = texts_.length - 1;
     for (i = 0; i < texts_.length / 2; i++) {
-        while ((texts_[i] == texts_[counter])) {
+        if (!(texts_[i] == texts_[counter])) {
+            return false
+        }
+        else {
             counter--;
             is_polindrom = true;
         }
+
     }
 
     return is_polindrom;
-}
+};
 mathematicalProblems.productOf = function (first_no, second_no) {
     return first_no * second_no;
 }
