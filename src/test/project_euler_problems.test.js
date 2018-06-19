@@ -3,7 +3,7 @@ const assert = chai.assert;
 
 const project_euler_lib = require('../math_problems/project_euler_problems.js');
 
-describe('Mathmatical Natural Numbers Problems', function () {
+describe('Mathmatical Problems', function () {
 
     describe('Multiples of x or y below the specific number', function () {
 
