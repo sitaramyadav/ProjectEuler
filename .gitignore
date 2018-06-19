@@ -1,2 +1,4 @@
 /node_modules
 .idea
+ProjectEuler.iml
+.DS_Store
