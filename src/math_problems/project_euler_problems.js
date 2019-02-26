@@ -54,20 +54,19 @@ mathematicalProblems.isPolindrom = function (texts) {
 };
 mathematicalProblems.productOf = function (first_no, second_no) {
     return first_no * second_no;
-}
+};
 
 
 mathematicalProblems.palindromBetween = function (from, to) {
-    let polyindroms = [];
     for (let i = from; i > to; i--) {
         for (let j = from - 1; j > to; j--) {
             let product_of = mathematicalProblems.productOf(i, j)
             if (mathematicalProblems.isPolindrom(product_of)) {
                 return product_of;
-            }
-        }
-    }
+            };
+        };
+    };
 
-}
+};
 
 module.exports = mathematicalProblems;

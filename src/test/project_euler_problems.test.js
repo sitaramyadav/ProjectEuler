@@ -82,4 +82,16 @@ describe('Mathmatical Problems', function () {
         });
 
     });
+
+    describe('IsDivided', function () {
+
+        it('isDivided should return', function () {
+            assert.equal(3, project_euler_lib.getLargestPrimeFactor(12));
+            assert.equal(7, project_euler_lib.getLargestPrimeFactor(21));
+            assert.equal(31, project_euler_lib.getLargestPrimeFactor(31));
+            assert.equal(7, project_euler_lib.getLargestPrimeFactor(49));
+            assert.equal(6857, project_euler_lib.getLargestPrimeFactor(600851475143));
+        });
+
+    });
 });
