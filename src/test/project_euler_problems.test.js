@@ -94,4 +94,21 @@ describe('Mathmatical Problems', function () {
         });
 
     });
+
+    describe('Smallest Number', function () {
+
+        it('can be devided by all the numbers between 1 to 10', function () {
+            assert.equal(2, project_euler_lib.lcmFrom(1,2));
+            assert.equal(6, project_euler_lib.lcmFrom(1,3));
+            assert.equal(12, project_euler_lib.lcmFrom(1,4));
+            assert.equal(60, project_euler_lib.lcmFrom(1,5));
+            assert.equal(60, project_euler_lib.lcmFrom(1,6));
+            assert.equal(840, project_euler_lib.lcmFrom(1,7));
+            assert.equal(1680, project_euler_lib.lcmFrom(1,8));
+            assert.equal(2520, project_euler_lib.lcmFrom(1,9));
+            assert.equal(2520, project_euler_lib.lcmFrom(1,10));
+            assert.equal(undefined, project_euler_lib.lcmFrom(1, 20));
+        });
+
+    });
 });
