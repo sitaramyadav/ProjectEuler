@@ -68,5 +68,25 @@ mathematicalProblems.palindromBetween = function (from, to) {
     };
 
 };
+const smallestCommon = (from, to) => {
+    function smallestCommonBetween(low, high) {
+        if (high % low === 0) {
+            return high;
+        } else {
+            return smallestCommonBetween(low, to + high);
+        }
+    }
+    return smallestCommonBetween(from, to);
+};
+
+mathematicalProblems.smallestCommons = function(from , to) {
+    let result = to;
+    for (let i = from; i <= to; i++) {
+        result = smallestCommon(i, result);
+    };
+    return result;
+};
+
+
 
 module.exports = mathematicalProblems;
