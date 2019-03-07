@@ -138,4 +138,31 @@ describe('Mathmatical Problems', function () {
 
         });
     });
+
+    describe('Nth Prime Number', function () {
+         it('Should give the nth prime number', function () {
+             function nthPrimeNumber(nth) {
+                let nthPrimeNumber;
+
+                 function getNextPrimeNumber(number) {
+                        for(let i =2;i<i/2;i++) {
+
+                        }
+                     return undefined;
+                 }
+
+                 while(nth <=nthPrimeNumber){
+                    nthPrimeNumber = getNextPrimeNumber(1);
+                };
+                 return nthPrimeNumber;
+             }
+
+             assert.equal(1, nthPrimeNumber(2))
+            assert.equal(2, nthPrimeNumber(3))
+            assert.equal(3, nthPrimeNumber(5))
+            assert.equal(4, nthPrimeNumber(7))
+            assert.equal(5, nthPrimeNumber(11))
+            assert.equal(6, nthPrimeNumber(13))
+        })
+    })
 });
