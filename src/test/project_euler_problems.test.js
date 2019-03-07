@@ -99,17 +99,43 @@ describe('Mathmatical Problems', function () {
 
         it('can be divided by all the numbers between 1 to 10', function () {
 
-            assert.equal(2, project_euler_lib.smallestCommons(1,2));
-            assert.equal(60, project_euler_lib.smallestCommons(2,5));
-            assert.equal(12, project_euler_lib.smallestCommons(1,4));
-            assert.equal(60, project_euler_lib.smallestCommons(1,5));
-            assert.equal(60, project_euler_lib.smallestCommons(1,6));
-            assert.equal(420, project_euler_lib.smallestCommons(1,7));
-            assert.equal(840, project_euler_lib.smallestCommons(1,8));
-            assert.equal(2520, project_euler_lib.smallestCommons(1,9));
-            assert.equal(2520, project_euler_lib.smallestCommons(1,10));
+            assert.equal(2, project_euler_lib.smallestCommons(1, 2));
+            assert.equal(60, project_euler_lib.smallestCommons(2, 5));
+            assert.equal(12, project_euler_lib.smallestCommons(1, 4));
+            assert.equal(60, project_euler_lib.smallestCommons(1, 5));
+            assert.equal(60, project_euler_lib.smallestCommons(1, 6));
+            assert.equal(420, project_euler_lib.smallestCommons(1, 7));
+            assert.equal(840, project_euler_lib.smallestCommons(1, 8));
+            assert.equal(2520, project_euler_lib.smallestCommons(1, 9));
+            assert.equal(2520, project_euler_lib.smallestCommons(1, 10));
             assert.equal(232792560, project_euler_lib.smallestCommons(1, 20));
         });
+    });
+    describe('Difference of Squires of some and some of squire', function () {
 
+        it('Should calculate the some of squires of all the numbers from given range', function () {
+            assert.equal(5, project_euler_lib.someOfSquares(1, 2));
+            assert.equal(54, project_euler_lib.someOfSquares(2, 5));
+            assert.equal(385, project_euler_lib.someOfSquares(1, 10));
+
+        });
+
+        it('Should calculate the some of all the numbers from given range', function () {
+            assert.equal(9, project_euler_lib.squireOfTheSomeBetween(1, 2));
+            assert.equal(81, project_euler_lib.squireOfTheSomeBetween(2, 4));
+            assert.equal(324, project_euler_lib.squireOfTheSomeBetween(3, 6));
+            assert.equal(3025, project_euler_lib.squireOfTheSomeBetween(1, 10));
+
+        });
+
+        it('Should calculate the difference between given numbers', function () {
+            assert.equal(1, project_euler_lib.difference(1, 2));
+            assert.equal(2, project_euler_lib.difference(2, 4));
+            assert.equal(3, project_euler_lib.difference(3, 6));
+            assert.equal(9, project_euler_lib.difference(1, 10));
+            assert.equal(2640, project_euler_lib.difference(project_euler_lib.someOfSquares(1, 10), project_euler_lib.squireOfTheSomeBetween(1, 10)));
+            assert.equal(25164150, project_euler_lib.difference(project_euler_lib.someOfSquares(1, 100), project_euler_lib.squireOfTheSomeBetween(1, 100)));
+
+        });
     });
 });

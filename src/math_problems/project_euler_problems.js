@@ -87,6 +87,25 @@ mathematicalProblems.smallestCommons = function(from , to) {
     return result;
 };
 
+mathematicalProblems.someOfSquares = function (from, to) {
+    let some = 0;
+    for(let i = from; i<=to;i++){
+        some +=i*i;
+    }
+    return some;
+};
 
+
+mathematicalProblems.squireOfTheSomeBetween = function (from, to){
+    let some = 0;
+    for( let i= from;i<=to;i++){
+        some +=i;
+    }
+    return some*some;
+};
+
+mathematicalProblems.difference = function(firstNumber, secoundNumber){
+    return Math.abs(firstNumber - secoundNumber);
+}
 
 module.exports = mathematicalProblems;
