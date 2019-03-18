@@ -63,9 +63,12 @@ mathematicalProblems.palindromBetween = function (from, to) {
             let product_of = mathematicalProblems.productOf(i, j)
             if (mathematicalProblems.isPolindrom(product_of)) {
                 return product_of;
-            };
-        };
-    };
+            }
+            ;
+        }
+        ;
+    }
+    ;
 
 };
 const smallestCommon = (from, to) => {
@@ -76,36 +79,55 @@ const smallestCommon = (from, to) => {
             return smallestCommonBetween(low, to + high);
         }
     }
+
     return smallestCommonBetween(from, to);
 };
 
-mathematicalProblems.smallestCommons = function(from , to) {
+mathematicalProblems.smallestCommons = function (from, to) {
     let result = to;
     for (let i = from; i <= to; i++) {
         result = smallestCommon(i, result);
-    };
+    }
+    ;
     return result;
 };
 
 mathematicalProblems.someOfSquares = function (from, to) {
     let some = 0;
-    for(let i = from; i<=to;i++){
-        some +=i*i;
+    for (let i = from; i <= to; i++) {
+        some += i * i;
     }
     return some;
 };
 
 
-mathematicalProblems.squireOfTheSomeBetween = function (from, to){
+mathematicalProblems.squireOfTheSomeBetween = function (from, to) {
     let some = 0;
-    for( let i= from;i<=to;i++){
-        some +=i;
+    for (let i = from; i <= to; i++) {
+        some += i;
     }
-    return some*some;
+    return some * some;
 };
 
-mathematicalProblems.difference = function(firstNumber, secoundNumber){
+mathematicalProblems.difference = function (firstNumber, secoundNumber) {
     return Math.abs(firstNumber - secoundNumber);
-}
+};
+
+mathematicalProblems.isPrime = num => {
+    for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+        if (num % i === 0) return false;
+    return num !== 1 && num !== 0;
+};
+
+mathematicalProblems.nthPrimeNumber = function (nth) {
+    let primeNumbers = [];
+    for (let i = 2; primeNumbers.length != nth; i++) {
+        if (mathematicalProblems.isPrime(i)) {
+            primeNumbers.push(i)
+        }
+    }
+    return primeNumbers[nth - 1];
+};
+
 
 module.exports = mathematicalProblems;
