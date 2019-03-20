@@ -129,5 +129,42 @@ mathematicalProblems.nthPrimeNumber = function (nth) {
     return primeNumbers[nth - 1];
 };
 
+mathematicalProblems.productOfAll = function (numbers) {
+    const reducer = (accumulator, currentValue) => mathematicalProblems.productOf(accumulator, currentValue);
+    return numbers.reduce(reducer);
+};
 
+mathematicalProblems.stringNumberToNumbers = function(givenNumber) {
+    return givenNumber.split('').map(function (each) {
+        return parseInt(each, 10);
+
+    });
+}
+
+mathematicalProblems.greatestProductOfAdjacentDigit = function (givenNumber, noOfDigit) {
+
+    let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber);
+
+    let startCounter = 0, endCounter = noOfDigit, acc, productOfNumbers, maxProductOfNumbers = 1;
+
+    function increaseCounter() {
+        startCounter = startCounter + 1;
+        endCounter = endCounter + 1;
+    }
+
+    function swapMaxProduct() {
+        if (productOfNumbers > maxProductOfNumbers) {
+            maxProductOfNumbers = productOfNumbers;
+        }
+    }
+
+    while (endCounter < 1000 && startCounter < 1000 - noOfDigit) {
+        acc = numbers.slice(startCounter, endCounter);
+        increaseCounter();
+        productOfNumbers = mathematicalProblems.productOfAll(acc);
+        swapMaxProduct();
+    }
+
+    return maxProductOfNumbers;
+};
 module.exports = mathematicalProblems;

@@ -140,6 +140,7 @@ describe('Mathmatical Problems', function () {
     });
 
     describe('Prime Number', function () {
+
         it('Should true if number is prime', function () {
             assert.equal(true, project_euler_lib.isPrime(2));
             assert.equal(true, project_euler_lib.isPrime(3));
@@ -153,6 +154,7 @@ describe('Mathmatical Problems', function () {
 
 
     describe('Nth Prime Number', function () {
+
         it('Should give the nth prime number', function () {
             assert.equal(2, project_euler_lib.nthPrimeNumber(1));
             assert.equal(3, project_euler_lib.nthPrimeNumber(2));
@@ -166,5 +168,51 @@ describe('Mathmatical Problems', function () {
             assert.equal(29, project_euler_lib.nthPrimeNumber(10));
             assert.deepEqual(104743, project_euler_lib.nthPrimeNumber(10001));
         })
-    })
+    });
+
+    describe('Find the products', function () {
+
+        it('Should return the product of given numbers', function () {
+
+            assert.equal(6, project_euler_lib.productOfAll([1, 2, 3]));
+            assert.equal(48, project_euler_lib.productOfAll([2, 3, 4, 2]));
+            assert.equal(5832, project_euler_lib.productOfAll([9, 9, 8, 9]));
+        });
+    });
+
+    describe('StringNumber', function () {
+
+        it('Should change into numbers', function () {
+            const givenNumber = '73167176531330624';
+            assert.deepEqual(
+                [7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0, 6, 2, 4],
+                project_euler_lib.stringNumberToNumbers(givenNumber));
+        });
+    });
+
+    describe('Find the n adjacent digits number in 1000 digit number', function () {
+
+        it('Should return 4 adjacent digit number which have greatest product', function () {
+            const givenNumber = '73167176531330624919225119674426574742355349' +
+                '194934969835203127745063262395783180169848018694788518438586' +
+                '156078911294949545950173795833195285320880551112540698747158' +
+                '523863050715693290963295227443043557668966489504452445231617' +
+                '318564030987111217223831136222989342338030813533627661428280' +
+                '644448664523874930358907296290491560440772390713810515859307' +
+                '960866701724271218839987979087922749219016997208880937766572' +
+                '733300105336788122023542180975125454059475224352584907711670' +
+                '556013604839586446706324415722155397536978179778461740649551' +
+                '492908625693219784686224828397224137565705605749026140797296' +
+                '865241453510047482166370484403199890008895243450658541227588' +
+                '666881164271714799244429282308634656748139191231628245861786' +
+                '645835912456652947654568284891288314260769004224219022671055' +
+                '626321111109370544217506941658960408071984038509624554443629' +
+                '812309878799272442849091888458015616609791913387549920052406' +
+                '368991256071760605886116467109405077541002256983155200055935' +
+                '72972571636269561882670428252483600823257530420752963450';
+
+            assert.equal(5832, project_euler_lib.greatestProductOfAdjacentDigit(givenNumber, 4));
+            assert.equal(23514624000, project_euler_lib.greatestProductOfAdjacentDigit(givenNumber, 13));
+        });
+    });
 });
