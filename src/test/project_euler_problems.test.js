@@ -3,23 +3,23 @@ const assert = chai.assert;
 
 const project_euler_lib = require('../math_problems/project_euler_problems.js');
 
-describe('Mathmatical Problems', function () {
+describe('Mathematical Problems', () => {
 
-    describe('Multiples of x or y below the specific number', function () {
+    describe('Multiples of x or y below the specific number', () => {
 
-        it('finds the sum of all the multiples of 3 or 5 below 10', function () {
+        it('finds the sum of all the multiples of 3 or 5 below 10', () => {
             let expectedResult = 23;
             let actualResult = project_euler_lib.sumOfMultiplesBetween(3, 5, 1, 10);
             assert.equal(expectedResult, actualResult);
         });
 
-        it('finds the sum of all the multiples of 3 or 5 below 20', function () {
+        it('finds the sum of all the multiples of 3 or 5 below 20', () => {
             let expectedResult = 78;
             let actualResult = project_euler_lib.sumOfMultiplesBetween(3, 5, 1, 20);
             assert.equal(expectedResult, actualResult);
         });
 
-        it('finds the sum of all the multiples of 3 or 5 below 1000', function () {
+        it('finds the sum of all the multiples of 3 or 5 below 1000', () => {
             let expectedResult = 233168;
             let actualResult = project_euler_lib.sumOfMultiplesBetween(3, 5, 1, 1000);
             assert.equal(expectedResult, actualResult);
@@ -27,22 +27,22 @@ describe('Mathmatical Problems', function () {
 
     });
 
-    describe('Fibonacci sequence', function () {
+    describe('Fibonacci sequence', () => {
         const fibonacci = project_euler_lib.fibonacci(4000000);
-        it('should not exceed four million', function () {
+        it('should not exceed four million', () => {
             assert.ok(fibonacci.lastTerm < 4000000);
 
         });
 
-        it('find the sum of the even-valued terms.', function () {
+        it('find the sum of the even-valued terms.', () => {
             assert.equal(fibonacci.evenSum, 4613732);
         });
 
     });
 
-    describe('Prime', function () {
+    describe('Prime', () => {
 
-        it('should return largest prime factor of the given number number', function () {
+        it('should return largest prime factor of the given number number', () => {
             assert.equal(3, project_euler_lib.getLargestPrimeFactor(12));
             assert.equal(7, project_euler_lib.getLargestPrimeFactor(21));
             assert.equal(31, project_euler_lib.getLargestPrimeFactor(31));
@@ -52,40 +52,40 @@ describe('Mathmatical Problems', function () {
 
     });
 
-    describe('Palindrome', function () {
+    describe('Palindrome', () => {
 
-        it('should return product of two no', function () {
+        it('should return product of two no', () => {
             const actual = project_euler_lib.productOf(99, 99);
             assert.equal(99 * 99, actual);
         });
 
-        it('should return true if no is palindrom for numbers', function () {
-            const actual = project_euler_lib.isPolindrom(9009);
+        it('should return true if no is palindrom for numbers', () => {
+            const actual = project_euler_lib.isPalindrome(9009);
             assert.equal(true, actual);
         });
 
-        it('should return true if no is palindrom for numbers', function () {
-            const actual = project_euler_lib.isPolindrom('CAAC');
+        it('should return true if no is palindrom for numbers', () => {
+            const actual = project_euler_lib.isPalindrome('CAAC');
             assert.equal(true, actual);
         });
 
         it('should return largest palindrome made from the product of two 2-digit numbers', function () {
             const expected = 9009;
-            const actual = project_euler_lib.palindromBetween(99, 90);
+            const actual = project_euler_lib.palindromeBetween(99, 90);
             assert.equal(expected, actual);
         });
 
         it('should return largest palindrome made from the product of two 3-digit numbers', function () {
             const expected = 906609;
-            const actual = project_euler_lib.palindromBetween(999, 900);
+            const actual = project_euler_lib.palindromeBetween(999, 900);
             assert.equal(expected, actual);
         });
 
     });
 
-    describe('IsDivided', function () {
+    describe('IsDivided', () => {
 
-        it('isDivided should return', function () {
+        it('isDivided should return', () => {
             assert.equal(3, project_euler_lib.getLargestPrimeFactor(12));
             assert.equal(7, project_euler_lib.getLargestPrimeFactor(21));
             assert.equal(31, project_euler_lib.getLargestPrimeFactor(31));
@@ -95,9 +95,9 @@ describe('Mathmatical Problems', function () {
 
     });
 
-    describe('Smallest Number', function () {
+    describe('Smallest Number', () => {
 
-        it('can be divided by all the numbers between 1 to 10', function () {
+        it('can be divided by all the numbers between 1 to 10', () => {
 
             assert.equal(2, project_euler_lib.smallestCommons(1, 2));
             assert.equal(60, project_euler_lib.smallestCommons(2, 5));
@@ -111,7 +111,7 @@ describe('Mathmatical Problems', function () {
             assert.equal(232792560, project_euler_lib.smallestCommons(1, 20));
         });
     });
-    describe('Difference of Squires of some and some of squire', function () {
+    describe('Difference of Squires of some and some of squire', () => {
 
         it('Should calculate the some of squires of all the numbers from given range', function () {
             assert.equal(5, project_euler_lib.someOfSquares(1, 2));
@@ -170,9 +170,9 @@ describe('Mathmatical Problems', function () {
         })
     });
 
-    describe('Find the products', function () {
+    describe('Find the products', () => {
 
-        it('Should return the product of given numbers', function () {
+        it('Should return the product of given numbers', () => {
 
             assert.equal(6, project_euler_lib.productOfAll([1, 2, 3]));
             assert.equal(48, project_euler_lib.productOfAll([2, 3, 4, 2]));
@@ -180,9 +180,9 @@ describe('Mathmatical Problems', function () {
         });
     });
 
-    describe('StringNumber', function () {
+    describe('StringNumber', () => {
 
-        it('Should change into numbers', function () {
+        it('Should change into numbers', () => {
             const givenNumber = '73167176531330624';
             assert.deepEqual(
                 [7, 3, 1, 6, 7, 1, 7, 6, 5, 3, 1, 3, 3, 0, 6, 2, 4],
@@ -190,9 +190,9 @@ describe('Mathmatical Problems', function () {
         });
     });
 
-    describe('Find the n adjacent digits number in 1000 digit number', function () {
+    describe('Find the n adjacent digits number in 1000 digit number', () => {
 
-        it('Should return 4 adjacent digit number which have greatest product', function () {
+        it('Should return 4 adjacent digit number which have greatest product', () => {
             const givenNumber = '73167176531330624919225119674426574742355349' +
                 '194934969835203127745063262395783180169848018694788518438586' +
                 '156078911294949545950173795833195285320880551112540698747158' +

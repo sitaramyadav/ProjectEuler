@@ -1,6 +1,6 @@
 const mathematicalProblems = {};
 
-mathematicalProblems.sumOfMultiplesBetween = function (firstNumber, secondNumber, from, to) {
+mathematicalProblems.sumOfMultiplesBetween = (firstNumber, secondNumber, from, to) => {
     let sum = 0;
     for (from; from < to; from++) {
         if (from % firstNumber == 0 || from % secondNumber == 0) {
@@ -10,7 +10,7 @@ mathematicalProblems.sumOfMultiplesBetween = function (firstNumber, secondNumber
     return sum;
 };
 
-mathematicalProblems.fibonacci = function (till) {
+mathematicalProblems.fibonacci = till => {
     let first = 1, second = 1, sum = 0, evenSum = 0;
     while (sum < till) {
         sum = first + second;
@@ -23,7 +23,7 @@ mathematicalProblems.fibonacci = function (till) {
     return {lastTerm: first, evenSum: evenSum};
 };
 
-mathematicalProblems.getLargestPrimeFactor = function (number) {
+mathematicalProblems.getLargestPrimeFactor = number => {
     let largestFactor = 2;
     while (largestFactor <= number) {
         if (number % largestFactor == 0) {
@@ -35,9 +35,9 @@ mathematicalProblems.getLargestPrimeFactor = function (number) {
     return largestFactor;
 };
 
-mathematicalProblems.isPolindrom = function (texts) {
-    let is_polindrom;
-    let texts_ = texts.toString().split('');
+mathematicalProblems.isPalindrome = texts => {
+    let is_palindrome;
+    const texts_ = texts.toString().split('');
     let counter = texts_.length - 1;
     for (i = 0; i < texts_.length / 2; i++) {
         if (!(texts_[i] == texts_[counter])) {
@@ -45,23 +45,21 @@ mathematicalProblems.isPolindrom = function (texts) {
         }
         else {
             counter--;
-            is_polindrom = true;
+            is_palindrome = true;
         }
 
     }
 
-    return is_polindrom;
+    return is_palindrome;
 };
-mathematicalProblems.productOf = function (first_no, second_no) {
-    return first_no * second_no;
-};
+mathematicalProblems.productOf = (first_no, second_no) => first_no * second_no;
 
 
-mathematicalProblems.palindromBetween = function (from, to) {
+mathematicalProblems.palindromeBetween = (from, to) => {
     for (let i = from; i > to; i--) {
         for (let j = from - 1; j > to; j--) {
             let product_of = mathematicalProblems.productOf(i, j)
-            if (mathematicalProblems.isPolindrom(product_of)) {
+            if (mathematicalProblems.isPalindrome(product_of)) {
                 return product_of;
             }
             ;
@@ -83,7 +81,7 @@ const smallestCommon = (from, to) => {
     return smallestCommonBetween(from, to);
 };
 
-mathematicalProblems.smallestCommons = function (from, to) {
+mathematicalProblems.smallestCommons = (from, to) => {
     let result = to;
     for (let i = from; i <= to; i++) {
         result = smallestCommon(i, result);
@@ -92,7 +90,7 @@ mathematicalProblems.smallestCommons = function (from, to) {
     return result;
 };
 
-mathematicalProblems.someOfSquares = function (from, to) {
+mathematicalProblems.someOfSquares = (from, to) => {
     let some = 0;
     for (let i = from; i <= to; i++) {
         some += i * i;
@@ -101,7 +99,7 @@ mathematicalProblems.someOfSquares = function (from, to) {
 };
 
 
-mathematicalProblems.squireOfTheSomeBetween = function (from, to) {
+mathematicalProblems.squireOfTheSomeBetween = (from, to) => {
     let some = 0;
     for (let i = from; i <= to; i++) {
         some += i;
@@ -109,9 +107,7 @@ mathematicalProblems.squireOfTheSomeBetween = function (from, to) {
     return some * some;
 };
 
-mathematicalProblems.difference = function (firstNumber, secoundNumber) {
-    return Math.abs(firstNumber - secoundNumber);
-};
+mathematicalProblems.difference = (firstNumber, secoundNumber) => Math.abs(firstNumber - secoundNumber);
 
 mathematicalProblems.isPrime = num => {
     for (let i = 2, s = Math.sqrt(num); i <= s; i++)
@@ -119,7 +115,7 @@ mathematicalProblems.isPrime = num => {
     return num !== 1 && num !== 0;
 };
 
-mathematicalProblems.nthPrimeNumber = function (nth) {
+mathematicalProblems.nthPrimeNumber = nth => {
     let primeNumbers = [];
     for (let i = 2; primeNumbers.length != nth; i++) {
         if (mathematicalProblems.isPrime(i)) {
@@ -129,19 +125,14 @@ mathematicalProblems.nthPrimeNumber = function (nth) {
     return primeNumbers[nth - 1];
 };
 
-mathematicalProblems.productOfAll = function (numbers) {
+mathematicalProblems.productOfAll = numbers => {
     const reducer = (accumulator, currentValue) => mathematicalProblems.productOf(accumulator, currentValue);
     return numbers.reduce(reducer);
 };
 
-mathematicalProblems.stringNumberToNumbers = function(givenNumber) {
-    return givenNumber.split('').map(function (each) {
-        return parseInt(each, 10);
+mathematicalProblems.stringNumberToNumbers = givenNumber => givenNumber.split('').map(each => parseInt(each, 10))
 
-    });
-}
-
-mathematicalProblems.greatestProductOfAdjacentDigit = function (givenNumber, noOfDigit) {
+mathematicalProblems.greatestProductOfAdjacentDigit = (givenNumber, noOfDigit) => {
 
     let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber);
 
