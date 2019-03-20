@@ -111,6 +111,7 @@ describe('Mathematical Problems', () => {
             assert.equal(232792560, project_euler_lib.smallestCommons(1, 20));
         });
     });
+
     describe('Difference of Squires of some and some of squire', () => {
 
         it('Should calculate the some of squires of all the numbers from given range', function () {
@@ -151,7 +152,6 @@ describe('Mathematical Problems', () => {
             assert.equal(true, project_euler_lib.isPrime(104743));
         });
     });
-
 
     describe('Nth Prime Number', function () {
 
@@ -213,6 +213,10 @@ describe('Mathematical Problems', () => {
 
             assert.equal(5832, project_euler_lib.greatestProductOfAdjacentDigit(givenNumber, 4));
             assert.equal(23514624000, project_euler_lib.greatestProductOfAdjacentDigit(givenNumber, 13));
+
+
+            assert.equal(5832, project_euler_lib.alterNativeOfGreatestProductOfAdjacentDigit(givenNumber, 4));
+            assert.equal(23514624000, project_euler_lib.alterNativeOfGreatestProductOfAdjacentDigit(givenNumber, 13));
         });
     });
 });

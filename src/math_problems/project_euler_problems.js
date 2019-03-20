@@ -86,7 +86,6 @@ mathematicalProblems.smallestCommons = (from, to) => {
     for (let i = from; i <= to; i++) {
         result = smallestCommon(i, result);
     }
-    ;
     return result;
 };
 
@@ -158,4 +157,15 @@ mathematicalProblems.greatestProductOfAdjacentDigit = (givenNumber, noOfDigit) =
 
     return maxProductOfNumbers;
 };
+
+mathematicalProblems.alterNativeOfGreatestProductOfAdjacentDigit = (givenNumber, noOfDigit) => {
+
+    let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber);
+    return numbers.map(function (each, ind, arr) {
+        return mathematicalProblems.productOfAll(arr.slice(ind, ind + noOfDigit));
+    }).reduce(function (accumulator, currentValue) {
+        return accumulator > currentValue ? accumulator : currentValue;
+    });
+};
+
 module.exports = mathematicalProblems;
