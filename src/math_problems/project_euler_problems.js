@@ -168,4 +168,14 @@ mathematicalProblems.alterNativeOfGreatestProductOfAdjacentDigit = (givenNumber,
     });
 };
 
+mathematicalProblems.sumOfPrimeNumberBelow = (givenNumber) => {
+    let sum = 0;
+    for (let i = 1; i<givenNumber;i++){
+        if(mathematicalProblems.isPrime(i)){
+            sum = sum +i;
+        }
+    }
+    return sum;
+
+};
 module.exports = mathematicalProblems;

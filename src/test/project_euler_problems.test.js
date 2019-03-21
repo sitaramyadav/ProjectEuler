@@ -219,4 +219,11 @@ describe('Mathematical Problems', () => {
             assert.equal(23514624000, project_euler_lib.alterNativeOfGreatestProductOfAdjacentDigit(givenNumber, 13));
         });
     });
+
+    describe('Sum of Prime Numbers', function () {
+        it('should calculate sum of the all the prim number below 10', function () {
+            assert.equal(17, project_euler_lib.sumOfPrimeNumberBelow(10));
+            assert.equal(undefined, project_euler_lib.sumOfPrimeNumberBelow(2000000));
+        })
+    })
 });
