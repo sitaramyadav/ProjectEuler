@@ -140,7 +140,7 @@ describe('Mathematical Problems', () => {
         });
     });
 
-    describe('Prime Number', function () {
+    describe('Prime Number', () => {
 
         it('Should true if number is prime', function () {
             assert.equal(true, project_euler_lib.isPrime(2));
@@ -153,7 +153,7 @@ describe('Mathematical Problems', () => {
         });
     });
 
-    describe('Nth Prime Number', function () {
+    describe('Nth Prime Number', () => {
 
         it('Should give the nth prime number', function () {
             assert.equal(2, project_euler_lib.nthPrimeNumber(1));
@@ -220,7 +220,8 @@ describe('Mathematical Problems', () => {
         });
     });
 
-    describe('Sum of Prime Numbers', function () {
+    describe('Sum of Prime Numbers', () => {
+
         it('should calculate sum of the all the prim number below 10', function () {
             assert.equal(17, project_euler_lib.sumOfPrimeNumberBelow(10));
             assert.equal(142913828922, project_euler_lib.sumOfPrimeNumberBelow(2000000));
