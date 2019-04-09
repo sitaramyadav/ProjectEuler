@@ -223,7 +223,7 @@ describe('Mathematical Problems', () => {
     describe('Sum of Prime Numbers', function () {
         it('should calculate sum of the all the prim number below 10', function () {
             assert.equal(17, project_euler_lib.sumOfPrimeNumberBelow(10));
-            assert.equal(undefined, project_euler_lib.sumOfPrimeNumberBelow(2000000));
+            assert.equal(142913828922, project_euler_lib.sumOfPrimeNumberBelow(2000000));
         })
     })
 });
