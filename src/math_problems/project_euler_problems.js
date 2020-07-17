@@ -61,12 +61,9 @@ mathematicalProblems.palindromeBetween = (from, to) => {
             let product_of = mathematicalProblems.productOf(i, j)
             if (mathematicalProblems.isPalindrome(product_of)) {
                 return product_of;
-            }
-            ;
+            };
         }
-        ;
     }
-    ;
 
 };
 const smallestCommon = (from, to) => {
@@ -129,11 +126,13 @@ mathematicalProblems.productOfAll = numbers => {
     return numbers.reduce(reducer);
 };
 
-mathematicalProblems.stringNumberToNumbers = givenNumber => givenNumber.split('').map(each => parseInt(each, 10))
+mathematicalProblems.stringNumberToNumbers = (givenNumber, splitter = '') => {
+    return givenNumber.split(splitter).map(each => parseInt(each, 10))
+};
 
 mathematicalProblems.greatestProductOfAdjacentDigit = (givenNumber, noOfDigit) => {
 
-    let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber);
+    let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber, '');
 
     let startCounter = 0, endCounter = noOfDigit, acc, productOfNumbers, maxProductOfNumbers = 1;
 
@@ -177,5 +176,23 @@ mathematicalProblems.sumOfPrimeNumberBelow = (givenNumber) => {
     }
     return sum;
 
+};
+
+mathematicalProblems.largestProductOfGrid = ( givenNumber ) => {
+    let numbers = mathematicalProblems.stringNumberToNumbers(givenNumber, " ");
+        // for (let i = 0; i <numbers.length; i=i+20) {
+        //
+        // }
+    let _numbers = {};
+    // _number`s['1'] = numbers.slice(0,20);
+    // _numbers['2'] = numbers.slice(20, 40);
+    // _numbers['3'] = numbers.slice(40, 60);
+    // _numbers['4'] = numbers.slice(60, 80);
+    // console.log(_numbers);
+    console.log(numbers)
+
+
+
+    return numbers
 };
 module.exports = mathematicalProblems;
